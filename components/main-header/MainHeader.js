@@ -1,15 +1,20 @@
 import Link from 'next/link'
 
 import logoImg from "@/assets/logo.png"
+import classes from "./main-header.module.css"
+import Image from 'next/image'
+import MainHeaderBackground from './MainHeaderBackground'
 
 function MainHeader() {
   return (
-    <header>
-        <Link href="/">
-            <img src={logoImg.src} alt='logo' />
+    <>
+    <MainHeaderBackground />
+    <header className={classes.header}>
+        <Link className={classes.logo} href="/">
+            <Image priority  src={logoImg} alt='logo' />
             Next Level Food
         </Link>
-        <nav>
+        <nav className={classes.nav}>
             <ul>
                 <li>
                     <Link href="/meals" >Browse Meals</Link>
@@ -20,6 +25,7 @@ function MainHeader() {
             </ul>
         </nav>
     </header>
+    </>
   )
 }
 
