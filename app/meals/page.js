@@ -1,19 +1,22 @@
 import Link from 'next/link'
-import React from 'react'
+
+import classes from "./page.module.css"
+import MealsGrid from '@/components/meals/MealsGrid'
 
 function MealsPage() {
   return (
-    <main>
-      <h1>Meals Page</h1>
-      <Link href="/share">
-        Share Meals
-      </Link>
-      <p>
-        <Link href="/meals/smothing">
-        meal 1
-      </Link>
-      </p>
-    </main>
+    <>
+      <header className={classes.header}>
+        <h1>Delicious meals, created <span className={classes.highlight}>by you</span></h1>
+        <p >Choose tour favorite recipe and cook it yourself. it is easy and fun!</p>
+        <p className={classes.cta}>
+          <Link href="/meals/share">Share Your  Favorit Recope</Link>
+        </p>
+      </header>
+      <main className={classes.main}>
+        <MealsGrid meals={[]} />
+      </main>
+    </>
   )
 }
 

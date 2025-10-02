@@ -24,7 +24,6 @@ function MainHeader() {
           </li>
           <li>
             <NavLink href="/community" >Foodies Community</NavLink>
-
           </li>
           </ul>
         </nav>
